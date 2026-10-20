@@ -1,111 +1,101 @@
 /* =========================================
-   PALETA DE COLORES
-   Primario (Fondo oscuro): #212529
-   Secundario (Texto claro): #F8F9FA
-   Acento (Rojo motor): #E63946
-   Fondo de tarjetas: #343A40
+   RESETEO GLOBAL (Box Model) - REQUISITO
    ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Fundamental para que el padding no rompa anchos */
+}
 
 /* =========================================
-   IMPORTACIÓN DE GOOGLE FONTS
-   Fuente Oswald para Títulos (peso 500 y 700)
-   Fuente Roboto para Textos (peso 300 y 400)
+   PALETA DE COLORES Y FUENTES
    ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400&display=swap');
 
-/* =========================================
-   ESTILOS GENERALES (Fondo personalizado)
-   ========================================= */
 body {
     background-color: #212529; 
     color: #F8F9FA;
-    font-family: 'Roboto', sans-serif; /* Fallback tipográfico siempre presente */
-    margin: 0;
-    padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* =========================================
-   TIPOGRAFÍA Y JERARQUÍA VISUAL
-   ========================================= */
-.titulo-principal {
-    font-family: 'Oswald', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #E63946;
-    margin-bottom: 10px;
-}
-
-.titulo-seccion {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
-    font-weight: 500;
-    color: #F8F9FA;
-    border-bottom: 2px solid #E63946;
-    display: inline-block;
-}
-
-.texto-normal {
-    font-size: 1.1rem;
-    font-weight: 300;
-    line-height: 1.6;
-}
-
-/* =========================================
-   ESTILOS DE ESTRUCTURA (USANDO SOLO CLASES)
+   NAVBAR CON FLEXBOX - REQUISITO
    ========================================= */
 .encabezado-sitio {
     background-color: #111111;
-    padding: 20px;
-    text-align: center;
+    padding: 20px 40px; /* Box model: aire a los costados */
+    display: flex; /* Flexbox en el padre */
+    justify-content: space-between; /* Logo a un extremo, enlaces al otro */
+    align-items: center; /* Alineación vertical perfecta */
 }
 
 .marca-sitio {
     font-family: 'Oswald', sans-serif;
     font-size: 2.5rem;
     color: #E63946;
-    margin: 0;
 }
 
 .menu-navegacion ul {
     list-style: none;
-    padding: 0;
-}
-
-.menu-navegacion li {
-    display: inline;
-    margin: 0 15px;
+    display: flex; /* Flexbox también para la lista de enlaces */
+    gap: 30px; /* REQUISITO: gap en lugar de margin repetitivo */
 }
 
 .menu-navegacion a {
     color: #F8F9FA;
     text-decoration: none;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    transition: color 0.3s;
 }
 
 .menu-navegacion a:hover {
-    color: #E63946; /* Efecto al pasar el mouse */
+    color: #E63946;
 }
 
+/* =========================================
+   CONTENIDO PRINCIPAL Y SECCIONES (FLEXBOX)
+   ========================================= */
 .contenido-principal {
-    padding: 20px 50px;
+    padding: 40px; /* Box model: respiro general */
+    display: flex; 
+    flex-direction: column; /* Apila las secciones de arriba hacia abajo */
+    gap: 40px; /* REQUISITO: separa las secciones sin usar margin manual */
 }
 
 .seccion-info {
     background-color: #343A40;
-    padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 8px; /* Bordes redondeados */
+    padding: 25px; /* REQUISITO: mínimo de 20px de padding interno */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Mantiene textos apilados adentro de la tarjeta */
+    gap: 15px; /* Separa título, texto e imagen adentro de la sección */
+}
+
+/* =========================================
+   TIPOGRAFÍA E IMÁGENES
+   ========================================= */
+.titulo-principal {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    color: #E63946;
+}
+
+.titulo-seccion {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    color: #F8F9FA;
+    border-bottom: 2px solid #E63946;
+    align-self: flex-start; /* Para que la línea roja no ocupe todo el ancho */
+}
+
+.texto-normal {
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .lista-servicios {
-    color: #F8F9FA;
-    font-weight: 400;
-    font-size: 1.1rem;
-}
-
-.lista-servicios li {
-    margin-bottom: 10px;
+    list-style-position: inside; /* Box model fix para listas */
 }
 
 .imagen-destacada {
@@ -114,15 +104,19 @@ body {
     border-radius: 5px;
 }
 
+/* =========================================
+   PIE DE PÁGINA
+   ========================================= */
 .pie-pagina {
     background-color: #111111;
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .pie-pagina a {
     color: #E63946;
     text-decoration: none;
-    font-weight: 700;
 }
