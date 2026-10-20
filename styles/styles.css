@@ -1,0 +1,128 @@
+/* =========================================
+   PALETA DE COLORES
+   Primario (Fondo oscuro): #212529
+   Secundario (Texto claro): #F8F9FA
+   Acento (Rojo motor): #E63946
+   Fondo de tarjetas: #343A40
+   ========================================= */
+
+/* =========================================
+   IMPORTACIÓN DE GOOGLE FONTS
+   Fuente Oswald para Títulos (peso 500 y 700)
+   Fuente Roboto para Textos (peso 300 y 400)
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400&display=swap');
+
+/* =========================================
+   ESTILOS GENERALES (Fondo personalizado)
+   ========================================= */
+body {
+    background-color: #212529; 
+    color: #F8F9FA;
+    font-family: 'Roboto', sans-serif; /* Fallback tipográfico siempre presente */
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================
+   TIPOGRAFÍA Y JERARQUÍA VISUAL
+   ========================================= */
+.titulo-principal {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #E63946;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #F8F9FA;
+    border-bottom: 2px solid #E63946;
+    display: inline-block;
+}
+
+.texto-normal {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* =========================================
+   ESTILOS DE ESTRUCTURA (USANDO SOLO CLASES)
+   ========================================= */
+.encabezado-sitio {
+    background-color: #111111;
+    padding: 20px;
+    text-align: center;
+}
+
+.marca-sitio {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: #E63946;
+    margin: 0;
+}
+
+.menu-navegacion ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-navegacion li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.menu-navegacion a {
+    color: #F8F9FA;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.menu-navegacion a:hover {
+    color: #E63946; /* Efecto al pasar el mouse */
+}
+
+.contenido-principal {
+    padding: 20px 50px;
+}
+
+.seccion-info {
+    background-color: #343A40;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.lista-servicios {
+    color: #F8F9FA;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.lista-servicios li {
+    margin-bottom: 10px;
+}
+
+.imagen-destacada {
+    max-width: 100%;
+    border: 3px solid #E63946;
+    border-radius: 5px;
+}
+
+.pie-pagina {
+    background-color: #111111;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.pie-pagina a {
+    color: #E63946;
+    text-decoration: none;
+    font-weight: 700;
+}
