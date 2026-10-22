@@ -16,37 +16,34 @@ body {
 }
 
 /* =========================================
-   NAVBAR Y LOGO (FLEXBOX)
+   NAVBAR PERSONALIZADO SOBRE BOOTSTRAP
    ========================================= */
 .encabezado-sitio {
     background-color: #111111;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 15px 40px;
 }
 
-/* Limitamos el tamaño del logo */
 .logo {
     max-width: 150px;
     height: auto;
 }
 
-.menu-navegacion ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.menu-navegacion a {
-    color: #F8F9FA;
-    text-decoration: none;
+/* Estados interactivos (hover, focus, active) con transition - REQUISITO */
+.nav-link {
+    color: #F8F9FA !important;
     font-size: 1.1rem;
-    transition: color 0.3s;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.menu-navegacion a:hover {
-    color: #E63946;
+.nav-link:hover, 
+.nav-link:focus {
+    color: #E63946 !important;
+    transform: scale(1.05); /* Pequeño salto visual */
+    outline: none;
+}
+
+.nav-link:active {
+    color: #b02a35 !important; /* Rojo más oscuro al hacer clic */
 }
 
 /* =========================================
@@ -68,11 +65,9 @@ body {
     gap: 15px;
 }
 
-/* --- APLICACIÓN DE GRID CONTAINER --- */
 .seccion-compleja {
     display: grid;
     gap: 25px;
-    /* En mobile, las áreas se apilan 100% del ancho usando 1fr */
     grid-template-columns: 1fr;
     grid-template-areas: 
         "info"
@@ -80,13 +75,12 @@ body {
         "imagen";
 }
 
-/* Asignación de áreas semánticas */
 .area-info { grid-area: info; }
 .area-servicios { grid-area: servicios; }
 .area-imagen { grid-area: imagen; }
 
 /* =========================================
-   TIPOGRAFÍA E IMÁGENES
+   TIPOGRAFÍA, IMÁGENES Y GALERÍA
    ========================================= */
 .titulo-principal {
     font-family: 'Oswald', sans-serif;
@@ -125,11 +119,27 @@ body {
     border-radius: 5px;
 }
 
+/* Interacción en tarjetas/imágenes de galería - REQUISITO */
+.imagen-interactiva {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.imagen-interactiva:hover,
+.imagen-interactiva:focus {
+    transform: scale(1.02);
+    border-color: #F8F9FA;
+    outline: none;
+}
+
+.imagen-interactiva:active {
+    transform: scale(0.98);
+}
+
 /* =========================================
-   BREAKPOINT DESKTOP - MEDIA QUERY
+   BREAKPOINT DESKTOP
    ========================================= */
 @media (min-width: 1024px) {
-    /* Transformamos el grid a 2 columnas usando unidades fr */
     .seccion-compleja {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
@@ -137,18 +147,11 @@ body {
             "servicios imagen";
     }
 
-    .menu-navegacion ul {
-        gap: 40px; /* Más aire en el menú para escritorio */
-    }
-
     .titulo-principal {
         font-size: 3.5rem;
     }
 }
 
-/* =========================================
-   PIE DE PÁGINA
-   ========================================= */
 .pie-pagina {
     background-color: #111111;
     text-align: center;
