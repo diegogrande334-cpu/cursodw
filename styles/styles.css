@@ -1,15 +1,12 @@
 /* =========================================
-   RESETEO GLOBAL (Box Model) - REQUISITO
+   RESETEO GLOBAL Y VARIABLES
    ========================================= */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Fundamental para que el padding no rompa anchos */
+    box-sizing: border-box;
 }
 
-/* =========================================
-   PALETA DE COLORES Y FUENTES
-   ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400&display=swap');
 
 body {
@@ -19,32 +16,31 @@ body {
 }
 
 /* =========================================
-   NAVBAR CON FLEXBOX - REQUISITO
+   NAVBAR Y LOGO (FLEXBOX)
    ========================================= */
 .encabezado-sitio {
     background-color: #111111;
-    padding: 20px 40px; /* Box model: aire a los costados */
-    display: flex; /* Flexbox en el padre */
-    justify-content: space-between; /* Logo a un extremo, enlaces al otro */
-    align-items: center; /* Alineación vertical perfecta */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.marca-sitio {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2.5rem;
-    color: #E63946;
+/* Limitamos el tamaño del logo */
+.logo {
+    max-width: 150px;
+    height: auto;
 }
 
 .menu-navegacion ul {
     list-style: none;
-    display: flex; /* Flexbox también para la lista de enlaces */
-    gap: 30px; /* REQUISITO: gap en lugar de margin repetitivo */
+    display: flex;
+    gap: 20px;
 }
 
 .menu-navegacion a {
     color: #F8F9FA;
     text-decoration: none;
-    font-weight: 400;
     font-size: 1.1rem;
     transition: color 0.3s;
 }
@@ -54,39 +50,62 @@ body {
 }
 
 /* =========================================
-   CONTENIDO PRINCIPAL Y SECCIONES (FLEXBOX)
+   DISEÑO BASE - MOBILE FIRST (1 Columna)
    ========================================= */
 .contenido-principal {
-    padding: 40px; /* Box model: respiro general */
-    display: flex; 
-    flex-direction: column; /* Apila las secciones de arriba hacia abajo */
-    gap: 40px; /* REQUISITO: separa las secciones sin usar margin manual */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .seccion-info {
     background-color: #343A40;
-    padding: 25px; /* REQUISITO: mínimo de 20px de padding interno */
+    padding: 25px;
     border-radius: 8px;
     display: flex;
-    flex-direction: column; /* Mantiene textos apilados adentro de la tarjeta */
-    gap: 15px; /* Separa título, texto e imagen adentro de la sección */
+    flex-direction: column;
+    gap: 15px;
 }
+
+/* --- APLICACIÓN DE GRID CONTAINER --- */
+.seccion-compleja {
+    display: grid;
+    gap: 25px;
+    /* En mobile, las áreas se apilan 100% del ancho usando 1fr */
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "info"
+        "servicios"
+        "imagen";
+}
+
+/* Asignación de áreas semánticas */
+.area-info { grid-area: info; }
+.area-servicios { grid-area: servicios; }
+.area-imagen { grid-area: imagen; }
 
 /* =========================================
    TIPOGRAFÍA E IMÁGENES
    ========================================= */
 .titulo-principal {
     font-family: 'Oswald', sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #E63946;
 }
 
 .titulo-seccion {
     font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #F8F9FA;
     border-bottom: 2px solid #E63946;
-    align-self: flex-start; /* Para que la línea roja no ocupe todo el ancho */
+    align-self: flex-start;
+}
+
+.subtitulo-seccion {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    color: #E63946;
 }
 
 .texto-normal {
@@ -95,13 +114,36 @@ body {
 }
 
 .lista-servicios {
-    list-style-position: inside; /* Box model fix para listas */
+    list-style-position: inside;
 }
 
 .imagen-destacada {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border: 3px solid #E63946;
     border-radius: 5px;
+}
+
+/* =========================================
+   BREAKPOINT DESKTOP - MEDIA QUERY
+   ========================================= */
+@media (min-width: 1024px) {
+    /* Transformamos el grid a 2 columnas usando unidades fr */
+    .seccion-compleja {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "info imagen"
+            "servicios imagen";
+    }
+
+    .menu-navegacion ul {
+        gap: 40px; /* Más aire en el menú para escritorio */
+    }
+
+    .titulo-principal {
+        font-size: 3.5rem;
+    }
 }
 
 /* =========================================
@@ -114,9 +156,4 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-.pie-pagina a {
-    color: #E63946;
-    text-decoration: none;
 }

@@ -8,7 +8,8 @@
 </head>
 <body>
     <header class="encabezado-sitio">
-        <p class="marca-sitio">Garage Motos</p>
+        <!-- Corrección: Logo con img -->
+        <img src="https://via.placeholder.com/150x50?text=Logo+Garage" alt="Logo de Garage Motos" class="logo">
         <nav class="menu-navegacion">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -21,18 +22,33 @@
     </header>
 
     <main class="contenido-principal">
+        <!-- Sección Simple -->
         <section class="seccion-info">
             <h1 class="titulo-principal">Venta de Motos y Accesorios</h1>
-            <p class="texto-normal">Encontrá todo lo que necesitás para vos y tu moto.</p>
+            <p class="texto-normal">Encontrá todo lo que necesitás para vos y tu moto en la ciudad.</p>
         </section>
 
-        <section class="seccion-info">
-            <h2 class="titulo-seccion">Nuestros servicios</h2>
-            <ul class="lista-servicios texto-normal">
-                <li>Venta de motos usadas y 0km.</li>
-                <li>Venta de cascos, camperas y guantes.</li>
-                <li>Gestión de transferencia e inspección mecánica.</li>
-            </ul>
+        <!-- Sección Compleja (Con CSS Grid) -->
+        <section class="seccion-compleja">
+            <!-- Corrección: article y h3 integrados -->
+            <article class="seccion-info area-info">
+                <h2 class="titulo-seccion">Sobre nosotros</h2>
+                <h3 class="subtitulo-seccion">Pasión por las dos ruedas</h3>
+                <p class="texto-normal">Somos un negocio dedicado a la compra y venta de motos, además de ofrecer indumentaria y repuestos de primera calidad.</p>
+            </article>
+
+            <article class="seccion-info area-servicios">
+                <h2 class="titulo-seccion">Nuestros servicios</h2>
+                <ul class="lista-servicios texto-normal">
+                    <li>Motos usadas y 0km.</li>
+                    <li>Indumentaria y cascos.</li>
+                    <li>Gestión de transferencias.</li>
+                </ul>
+            </article>
+
+            <figure class="area-imagen">
+                <img src="https://via.placeholder.com/600x600/343A40/F8F9FA?text=Frente+del+Local" alt="Frente del local comercial Garage Motos" class="imagen-destacada">
+            </figure>
         </section>
     </main>
 

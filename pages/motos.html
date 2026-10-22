@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Motos | Garage Motos</title>
-    <!-- Acá la ruta sale de la carpeta pages -->
+    <title>Motos | Garage Motos</title>
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
     <header class="encabezado-sitio">
-        <p class="marca-sitio">Garage Motos</p>
+        <img src="https://via.placeholder.com/150x50?text=Logo+Garage" alt="Logo de Garage Motos" class="logo">
         <nav class="menu-navegacion">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
@@ -23,15 +22,29 @@
 
     <main class="contenido-principal">
         <section class="seccion-info">
-            <h1 class="titulo-principal">Catálogo de Vehículos</h1>
+            <h1 class="titulo-principal">Catálogo de Motos</h1>
             <p class="texto-normal">Conocé nuestras unidades 0km y usadas seleccionadas.</p>
         </section>
 
-        <section class="seccion-info">
-            <h2 class="titulo-seccion">Honda Biz 125</h2>
-            <figure>
-                <img src="https://via.placeholder.com/600x300/343A40/F8F9FA?text=Foto+Honda+Biz" alt="Honda Biz 125 estacionada" class="imagen-destacada">
-                <figcaption class="texto-normal">Unidad urbana ideal para el día a día. Excelente estado.</figcaption>
+        <!-- Sección Compleja (Con CSS Grid) -->
+        <section class="seccion-compleja">
+            <article class="seccion-info area-info">
+                <h2 class="titulo-seccion">Honda Biz 125</h2>
+                <h3 class="subtitulo-seccion">Ideal para la ciudad</h3>
+                <p class="texto-normal">Una unidad perfecta para moverte ágilmente por el tráfico, con bajo consumo y excelente valor de reventa.</p>
+            </article>
+
+            <article class="seccion-info area-servicios">
+                <h2 class="titulo-seccion">Especificaciones</h2>
+                <ul class="lista-servicios texto-normal">
+                    <li>Motor monocilíndrico de 125cc.</li>
+                    <li>Freno a disco delantero.</li>
+                    <li>Baúl bajo asiento.</li>
+                </ul>
+            </article>
+
+            <figure class="area-imagen">
+                <img src="https://via.placeholder.com/600x600/343A40/F8F9FA?text=Foto+Honda+Biz" alt="Motocicleta Honda Biz 125 estacionada" class="imagen-destacada">
             </figure>
         </section>
     </main>
