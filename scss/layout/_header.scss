@@ -1,0 +1,11 @@
+@use "../utilities/variables" as *;
+
+.encabezado-sitio {
+    background-color: $color-oscuro;
+    padding: 15px 40px;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}

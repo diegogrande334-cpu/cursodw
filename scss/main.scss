@@ -1,0 +1,16 @@
+// 1. Utilities
+@use "utilities/variables";
+@use "utilities/mixins";
+
+// 2. Base
+@use "base/base";
+@use "base/tipografia";
+
+// 3. Layout
+@use "layout/header";
+@use "layout/nav";
+@use "layout/footer";
+
+// 4. Components
+@use "components/sections";
+@use "components/gallery";

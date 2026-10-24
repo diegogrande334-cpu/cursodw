@@ -1,0 +1,19 @@
+@use "../utilities/variables" as *;
+
+.nav-link {
+    color: $color-texto !important;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+
+    // Uso del operador & para los estados interactivos
+    &:hover,
+    &:focus {
+        color: $color-acento !important;
+        transform: scale(1.05);
+        outline: none;
+    }
+
+    &:active {
+        color: darken($color-acento, 10%) !important; 
+    }
+}

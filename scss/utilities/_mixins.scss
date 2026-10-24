@@ -1,0 +1,4 @@
+// Mixin para aplicar transiciones suaves rápidamente
+@mixin transicion-suave {
+    transition: all 0.3s ease;
+}

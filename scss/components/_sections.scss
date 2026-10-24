@@ -1,0 +1,39 @@
+@use "../utilities/variables" as *;
+
+.contenido-principal {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.seccion-info {
+    background-color: $color-tarjeta;
+    padding: 25px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.seccion-compleja {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "info"
+        "servicios"
+        "imagen";
+
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "info imagen"
+            "servicios imagen";
+    }
+}
+
+// Áreas del grid anidadas conceptualmente
+.area-info { grid-area: info; }
+.area-servicios { grid-area: servicios; }
+.area-imagen { grid-area: imagen; }
