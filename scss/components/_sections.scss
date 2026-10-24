@@ -1,16 +1,26 @@
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+/* NUEVO: Clase base para heredar (Requisito 3: @extend) */
+%caja-sombreada {
+    background-color: $color-tarjeta;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
 
 .contenido-principal {
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    padding: 20px; /* Base Mobile-first */
+    @include flex-center(column, flex-start, stretch); /* Mixin con parámetros */
+    gap: 30px;
+
+    @media (min-width: 768px) { /* Breakpoint Tablet (Requisito 4) */
+        padding: 30px 40px;
+    }
 }
 
 .seccion-info {
-    background-color: $color-tarjeta;
-    padding: 25px;
-    border-radius: 8px;
+    @extend %caja-sombreada; /* Aplicando el extend */
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -25,7 +35,11 @@
         "servicios"
         "imagen";
 
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) { /* Tablet: espaciado intermedio */
+        gap: 35px;
+    }
+
+    @media (min-width: 1024px) { /* Desktop: pasa a 2 columnas */
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
             "info imagen"
@@ -33,7 +47,6 @@
     }
 }
 
-// Áreas del grid anidadas conceptualmente
 .area-info { grid-area: info; }
 .area-servicios { grid-area: servicios; }
 .area-imagen { grid-area: imagen; }

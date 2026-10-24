@@ -1,5 +1,12 @@
 @use "../utilities/variables" as *;
 
+/* Animación nativa (Requisito 1) */
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
 .encabezado-sitio {
     background-color: $color-oscuro;
     padding: 15px 40px;
@@ -8,4 +15,6 @@
 .logo {
     max-width: 150px;
     height: auto;
+    /* Aplico la animación nativa */
+    animation: latido 3s ease-in-out infinite; 
 }
