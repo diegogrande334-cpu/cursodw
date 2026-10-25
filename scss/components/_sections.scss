@@ -50,3 +50,13 @@
 .area-info { grid-area: info; }
 .area-servicios { grid-area: servicios; }
 .area-imagen { grid-area: imagen; }
+
+.card {
+    height: 100%; // Obliga a ambas tarjetas a estirarse parejo dentro de su columna
+
+    .card-img-top {
+        height: 350px; // Podés ajustar este número si querés la foto más alta o más bajita
+        object-fit: cover; // Recorta el sobrante de la imagen sin achatar la moto
+        background-color: #ffffff; // Fondo blanco por si alguna imagen tiene bordes transparentes
+    }
+}

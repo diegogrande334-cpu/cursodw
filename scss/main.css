@@ -153,6 +153,16 @@ body {
   grid-area: imagen;
 }
 
+.card {
+  height: 100%;
+}
+.card .card-img-top {
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: #ffffff;
+}
+
 .imagen-destacada {
   width: 100%;
   height: 100%;
