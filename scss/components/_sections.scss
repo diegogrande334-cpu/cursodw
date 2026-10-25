@@ -52,11 +52,12 @@
 .area-imagen { grid-area: imagen; }
 
 .card {
-    height: 100%; // Obliga a ambas tarjetas a estirarse parejo dentro de su columna
+    height: 100%;
 
     .card-img-top {
-        height: 350px; // Podés ajustar este número si querés la foto más alta o más bajita
-        object-fit: cover; // Recorta el sobrante de la imagen sin achatar la moto
-        background-color: #ffffff; // Fondo blanco por si alguna imagen tiene bordes transparentes
+        height: 350px; 
+        object-fit: contain; /* Cambio clave: de cover a contain */
+        background-color: #ffffff; 
+        padding: 10px; /* Le damos un leve margen interno para que la rueda no toque los bordes */
     }
 }

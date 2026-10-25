@@ -158,9 +158,10 @@ body {
 }
 .card .card-img-top {
   height: 350px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain; /* Cambio clave: de cover a contain */
   background-color: #ffffff;
+  padding: 10px; /* Le damos un leve margen interno para que la rueda no toque los bordes */
 }
 
 .imagen-destacada {
